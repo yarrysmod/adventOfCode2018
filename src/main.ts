@@ -37,18 +37,13 @@ export abstract class Level {
 
   async _generateOutput(): Promise<string> {
     const input: string = await this._loadInputFile();
-    let outputFunction: Function = () => {};
 
     switch (this.stageNumber) {
       case 1: {
-        outputFunction = this._getStage1Result;
-
-        break;
+        return this._getStage1Result(input);
       }
       case 2: {
-        outputFunction = this._getStage2Result;
-
-        break;
+        return this._getStage2Result(input);
       }
       default: {
         console.log(`invalid stage number supplied! ${this.stageNumber}`);
@@ -56,8 +51,6 @@ export abstract class Level {
         process.exit(1);
       }
     }
-
-    return outputFunction(input);
   };
 
   abstract async _getStage1Result(input: string): Promise<string>;

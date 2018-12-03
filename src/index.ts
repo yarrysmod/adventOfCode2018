@@ -1,4 +1,5 @@
 import Level1 from './level1';
+import Level2 from './level2';
 import {Level} from "./main";
 
 const printLevelOutput: Function = async () => {
@@ -19,6 +20,9 @@ const printLevelOutput: Function = async () => {
       levelInstance = new Level1(stageNumber);
 
       break;
+    }
+    case 2: {
+      levelInstance = new Level2(stageNumber);
     }
   }
 
