@@ -1,6 +1,8 @@
+import {Level} from "./main";
+
 import Level1 from './level1';
 import Level2 from './level2';
-import {Level} from "./main";
+import Level3 from './level3';
 
 const printLevelOutput: Function = async () => {
   const parameters: string[] = process.argv;
@@ -23,6 +25,9 @@ const printLevelOutput: Function = async () => {
     }
     case 2: {
       levelInstance = new Level2(stageNumber);
+    }
+    case 3: {
+      levelInstance = new Level3(stageNumber);
     }
   }
 
